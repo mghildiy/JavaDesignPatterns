@@ -1,6 +1,5 @@
-package com.manish.design.patterns.creational.builder;
+package com.cypherlabs.designpatterns.creational.builder;
 
-import com.manish.design.patterns.creational.Maze;
 
 // implementation of builder pattern.It merely keeps count of doors and rooms.
 public class CountingMazeBuilder extends BasicMazeBuilder {

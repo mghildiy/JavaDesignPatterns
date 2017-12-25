@@ -1,7 +1,7 @@
-package com.manish.design.patterns.creational;
+package com.cypherlabs.designpatterns.creational;
 
-import com.manish.design.patterns.creational.abstractfactory.MazeFactory;
-import com.manish.design.patterns.creational.builder.MazeBuilder;
+import com.cypherlabs.designpatterns.creational.abstractfactory.MazeFactory;
+import com.cypherlabs.designpatterns.creational.builder.MazeBuilder;
 
 public class MazeGame {
 

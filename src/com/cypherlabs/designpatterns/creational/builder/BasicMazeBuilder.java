@@ -1,6 +1,7 @@
-package com.manish.design.patterns.creational.builder;
+package com.cypherlabs.designpatterns.creational.builder;
 
-import com.manish.design.patterns.creational.*;
+
+import com.cypherlabs.designpatterns.creational.*;
 
 // basic implementation of builder pattern interface
 public class BasicMazeBuilder implements MazeBuilder {

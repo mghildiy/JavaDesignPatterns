@@ -1,4 +1,4 @@
-package com.manish.design.patterns.creational.singleton;
+package com.cypherlabs.designpatterns.creational.singleton;
 
 // singleton pattern to ensure single isntance of MazeFactory
 public class MazeFactory {

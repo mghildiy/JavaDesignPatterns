@@ -1,4 +1,4 @@
-package com.manish.design.patterns.creational;
+package com.cypherlabs.designpatterns.creational;
 
 public class RoomWithABomb extends Room{
 

@@ -1,9 +1,10 @@
-package com.manish.design.patterns.creational.abstractfactory;
+package com.cypherlabs.designpatterns.creational.abstractfactory;
 
-import com.manish.design.patterns.creational.Door;
-import com.manish.design.patterns.creational.DoorNeedingSpell;
-import com.manish.design.patterns.creational.EnchantedRoom;
-import com.manish.design.patterns.creational.Room;
+
+import com.cypherlabs.designpatterns.creational.Door;
+import com.cypherlabs.designpatterns.creational.DoorNeedingSpell;
+import com.cypherlabs.designpatterns.creational.EnchantedRoom;
+import com.cypherlabs.designpatterns.creational.Room;
 
 // concrete implementation of abstract factory interface.It creates normal maze, enchanted room,basic wall,door with a spell
 public class EnchantedMazeFactory extends BasicMazeFactory {

@@ -1,7 +1,7 @@
-package com.manish.design.patterns.creational.builder;
+package com.cypherlabs.designpatterns.creational.builder;
 
-import com.manish.design.patterns.creational.Maze;
-import com.manish.design.patterns.creational.Room;
+
+import com.cypherlabs.designpatterns.creational.Maze;
 
 // Builder interface to create maze
 public interface MazeBuilder {

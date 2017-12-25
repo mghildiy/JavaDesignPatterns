@@ -1,4 +1,4 @@
-package com.manish.design.patterns.creational;
+package com.cypherlabs.designpatterns.creational;
 
 import java.util.List;
 
