@@ -1,0 +1,54 @@
+4 constituents of design pattern:
+1. Name
+2. Problem
+3. Solution
+3. Consequences and trade-offs
+
+Classification of design patterns:
+- Purpose: Creational,Structural,Behavioural
+- Scope: Class,Object
+
+Implementation inheritance(Class) vs Interface inheritance: Purpose of Implementation inheritance is code sharing/reusability and extensibility,
+while Interface inheritance is meant to make sure that objects can be substituted with each other at run time.
+
+Program to an interface, not an implementation.This greatly reduces implementation dependencies between subsystems.
+Creational patterns abstract the process of object creation.These patterns give you different ways to associate an interface with its implementation
+transparently at instantiation. Creational patterns ensure that your system is written in terms of interfaces, not implementations.
+
+Inheritance versus Composition: Composition allows behaviours ot be composed at run-time as compositions can be done with Interfaces.
+With inheritance subclass is bound to parent class's implementation.
+Favor object composition over class inheritance.
+
+Creational patterns: Creational design patterns abstract the instantiation process. They enable a software system to be independent of how
+its objects are created,composed and represented.A class creational pattern uses inheritance to vary the class that's instantiated,
+whereas an object creational pattern will delegate instantiation to another object.
+There are two recurring themes in these patterns. First, they all encapsulate knowledge about which concrete classes the system uses.
+Second, they hide how instances of these classes are created and put together.
+
+a. Abstract factory pattern: It is a creational pattern which provides an interface for creating families of related or dependent objects without
+specifying their concrete classes. Suppose a class depends on several related/dependent objects. One can put code for creating these objects within
+the class.
+But this approach makes the system inflexible as in future different types of objects may be needed and this would need huge change in class.
+With abstract factory, we provide an interface to create the objects. We then can have concrete implementation of this interface which creates
+specific type of concrete objects and return abstract/interface type.So client doesn't know which concrete type is created.
+When new type of objects is needed, we implement abstract factory interface, and client needs to make a small change and switch to new
+implementation.
+
+b. Builder pattern: It is a creational pattern which separates construction of a complex object from its representation.
+As a result, same construction process can be used to create different representations.
+
+c. Factory method pattern: It is a creational pattern which provides an interface to create an object, but let subclasses decide which object
+to create.
+
+d. Prototype pattern:
+
+e. Singleton pattern: It is a creational pattern and ensures that a class has only one instance, and provides a global point of access to it.
+
+Structural patterns: Structural patterns are concerned with how classes and objects are composed to form larger structures.
+Structural class patterns make use of inheritance to compose interfaces/implementations.Structural object patterns describe ways to compose objects
+to create new functionality.
+
+a. Adapter pattern: It is a structural pattern which converts interface of a class into another interface that client expects,thus enabling
+classes to work with each other which couldn't otherwise due to incompatible interfaces.
+
+Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
