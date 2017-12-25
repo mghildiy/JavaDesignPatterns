@@ -1,4 +1,10 @@
 package com.cypherlabs.designpatterns.structural.adapter;
 
-public class Shape {
+
+import java.awt.*;
+
+// This is target class for client.
+public interface Shape {
+
+    void BoundingBox(Point bottomLeft, Point topRight);
 }
