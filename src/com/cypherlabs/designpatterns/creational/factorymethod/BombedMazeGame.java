@@ -1,6 +1,6 @@
-package com.manish.design.patterns.creational.factorymethod;
+package com.cypherlabs.designpatterns.creational.factorymethod;
 
-import com.manish.design.patterns.creational.*;
+import com.cypherlabs.designpatterns.creational.*;
 
 public class BombedMazeGame extends MazeGame {
 

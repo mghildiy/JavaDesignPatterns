@@ -52,4 +52,10 @@ a. Adapter pattern: It is a structural pattern which converts interface of a cla
 classes to work with each other which couldn't otherwise due to incompatible interfaces.
 Adapter pattern can either make use of inheritance(class scope) or composition(object scope).
 
+b. Bridge pattern: If we have an abstract class which can have several implementations, we use inheritance. Abstract class defines an interface,
+and concrete subclasses implements that interface. This creates strong coupling between abstraction and implementation, and hence they can't
+evolve independently.
+Bridge pattern handles this issue. In this pattern, abstractions and their implementations are placed in different class hierarchies. An interface
+is used which acts as a connector/bridge between between these 2 hierarchies. Abstract class contains reference to this bridge interface.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
