@@ -58,4 +58,13 @@ evolve independently.
 Bridge pattern handles this issue. In this pattern, abstractions and their implementations are placed in different class hierarchies. An interface
 is used which acts as a connector/bridge between between these 2 hierarchies. Abstract class contains reference to this bridge interface.
 
+c. Composite design pattern: This design pattern makes it possible for client code to treat a whole tree of parent-child objects as same object.
+In a context where objects are arranged in a tree structure with a composite object having leaf objects as well as other composite objects, and
+all such objects expected to have same behaviour from client point of view, this pattern makes it possible for client to treat all in same manner.
+For eg.,in a drawing application, we may have individual objects like Line,Rectangle,Triangle,Circle etc and composite objects like Picture which
+contains individual objects OR other composite objects. Client code needs 'draw' behaviour for all these objects, individual as well as composite.
+So we define 'draw' interface, and this constitutes 'Component' interface. We make individual objects,'Leaf', implement this interface.
+'Composite' object also implements 'Component' interface, as well as a general interface fro adding/removing leaf/composite objects.
+Client code just needs to call 'draw' on top composite object, and call in delegated to all the objects in tree.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
