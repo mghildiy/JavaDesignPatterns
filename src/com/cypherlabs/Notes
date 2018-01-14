@@ -75,4 +75,11 @@ We define the interface of the target object/class. And we define an abstract De
 same interface as target object and client can invoke calls on it transparently.This abstract class also contains the reference to target object.
 We implement concrete classes for Decorator,wherin we direct client requests to target object.And while it does so,it also performs the 'decoration'.
 
+e. Facade dssign pattern: Its very common to have complex software systems which consist of large number of smaller parts.These small parts/components
+work behind their own interfaces which external systems can use. So if needed, external systems interact individually with these parts. It certainly
+helps in customization. But it also means a large number of interfaces/parts to work with. So if an external system merely needs to use system as a whole
+and customization is not its main aim, then this complexity of too many parts to deal with is an overkill.
+Facade pattern help sin salvaging the situation. We basically provide a single,simplified interface called Facade which external systems can use
+to deal with system as a whole. They dont need to interact with individual parts of the system.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
