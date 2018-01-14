@@ -67,4 +67,12 @@ So we define 'draw' interface, and this constitutes 'Component' interface. We ma
 'Composite' object also implements 'Component' interface, as well as a general interface fro adding/removing leaf/composite objects.
 Client code just needs to call 'draw' on top composite object, and call in delegated to all the objects in tree.
 
+d. Decorator design pattern: When we extend a class, subclass inherits features/responsibilities from it. As a result all the objects of subclass
+have those aspects. This is desired many times, but sometimes we want some features/responsibilities to be possessed by some individual objects only,
+rather than every single object of the class. Decorator pattern helps in achieving this. From client's perspective, it still calls same interface
+implemented by the target object.
+We define the interface of the target object/class. And we define an abstract Decorator class which implements this interface, so now it has
+same interface as target object and client can invoke calls on it transparently.This abstract class also contains the reference to target object.
+We implement concrete classes for Decorator,wherin we direct client requests to target object.And while it does so,it also performs the 'decoration'.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
