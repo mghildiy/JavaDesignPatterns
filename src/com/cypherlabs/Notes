@@ -82,4 +82,12 @@ and customization is not its main aim, then this complexity of too many parts to
 Facade pattern help sin salvaging the situation. We basically provide a single,simplified interface called Facade which external systems can use
 to deal with system as a whole. They dont need to interact with individual parts of the system.
 
+f. Flyweight pattern: This pattern makes it possible to share common data among various objects, and hence helps in handling memory related issues.
+Such objects have some data in common which dont for different contexts, called Intrinsic data. Data which varies is called Extrinsic data.
+For every piece of intrinsic data we have an instance, hence if same intrinsic data is needed in different contexts we make use of very same object.
+This reduces number of objects. Extrinsic data is to be supplied by the client base don context object is used from. Intrinsic data is kept immutable.
+For eg., in an editor application same character is drawn at many positions. So character is intrinsic data while position is extrinsic. So for every
+alphabet we have an object, and client provides position at which character has to be drawn. Object are called flyweight objects, and are created by
+a factory which maintains a map between a key and the instance.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
