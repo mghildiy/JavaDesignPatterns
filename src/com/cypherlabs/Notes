@@ -90,4 +90,10 @@ For eg., in an editor application same character is drawn at many positions. So 
 alphabet we have an object, and client provides position at which character has to be drawn. Object are called flyweight objects, and are created by
 a factory which maintains a map between a key and the instance.
 
+g. Proxy design pattern: This structural pattern is required in scenarios when some entities in the program needs to be have controlled access.
+This can be something like a heavy object like an image, or network connection etc. We want that clients are not able to access it in a direct manner.
+So we introduce a substitute for it,called proxy. Client interacts with proxy, which in turn delegates calls to main object,called as Subject.
+For this to achieve, proxy and Subject implement same interface, also called as Subject.Proxy object then can add its own conditional logic
+to control access to subject.
+
 Strategy pattern: Encapsulating algorithm in an object is the intent of Strategy pattern.
