@@ -1,4 +1,127 @@
-4 constituents of design pattern:
+OO principles:
+Abstraction: In object oriented design, abstraction mechanism is meant to hide implementation details from client. All client needs to know is that
+what all operations can be performed on an object. How they are performed internally is of no concern to client. Inner complexities of working are
+hidden away, and client only needs to interact with objects via its interface(set of operations which can be requested to an object).
+
+Encapsulation: An object is a combination of data and operations which can be performed on that data. In object oriented system, objects' state changes
+by invocation of operations on their data and with state change system progresses ahead to finally achieve its goal. But merely state change is not
+important. It is also very critical that state change is functionally correct. Hence it is needed that agents from outside of the object are not
+able to change its state directly.Instead they can do it only via object's interface. This approach enables us to run validation/functional rules to ensure
+that change in state is valid. Hence access to internal details of an object is restricted. This is called encapsulation.
+
+Polymorphism: In object oriented system, multiple objects can have same interface. So when an operation is invoked via an interface, then which object
+that request would be mapped to is determined during run time. This run-time association of request to an object and one of its operation is called
+dynamic binding.Dynamic binding means that invoking an operation doesn't commit us to a particular object(ie implementation) until run-time.
+Hence, we can write programs that expect an object with a particular interface, knowing that any object that has the correct interface will accept
+the request. Moreover, dynamic binding allows us to substitute objects that have identical interfaces for each other at run-time. This substitutability
+is known as polymorphism, and it's a key concept in object-oriented systems. It lets a client object make few assumptions about other objects beyond
+supporting a particular interface.
+Polymorphism:
+-simplifies the definitions of clients
+-decouples objects from each other
+-and lets them vary their relationships to each other at run-time
+
+Inheritance:
+
+
+
+
+Abstract class should contain only those behaviours which are common to child classes. Else, we may end up providing dummy implementations
+for such behaviours in classes which don't really need that behaviour. This is a big maintainability cost.
+Another problem with abstract class is that their behaviour is strongly coupled with their child classes, and hence difficult to replace in run time
+which costs system in terms of flexibility.
+Also, we can't add abstract class behaviour to an already existing class which already extends a super class.
+
+Can we resort to Interface based inheritance in such cases, making only those child classes implement Interface which need that behaviour?
+This would reduce code reuse, and we would need to make changes at all places where that behaviour is implemented and hence a different type
+of maintenance problem.
+
+So inheritance doesn't help much when software requirements keep changing.
+
+Design principle:
+Those aspects of code which keep changing with requirements must be separated out from unvarying parts and encapsulate them, and then alter
+or extend them separately without affecting  unchanging parts.
+This principle forms basis of all design patterns. Every design pattern provides a way to let some part of the system vary independently
+from all other parts.
+
+Those varying behaviours once encapsulated, can then be assigned to those classes which need that behaviour. Moreover, it would be much better
+if we can replace the behaviours dynamically so that a class is not bound to a single implementation of behaviour. This brings lots of flexibility
+to the system. This brings us to another design principle.
+
+Design principle:
+Program to an interface, not an implementation.
+It means we represent a behaviour with an interface/abstract class and then make multiple implementations of that interface/abstract class for specific cases.
+This decouples system from specific implementations and behaviour can be replaced dynamically.
+Point is to exploit polymorphism by programming to a supertype so that actual runtime object is not locked into the code.
+So declared type of variables should be a supertype, like interface or abstract class, so that objects assigned to those variables can be of
+any concrete implementation of the supertype, which means client code using them doesn't need to know about actual object types.
+So, prefer
+Automobile a = new Car();
+over
+Car c = new Car();
+Even better would be not to hardcode the instantiation of subtype into the code, rather assign concrete implementation at run time:
+Automobile a = getAutomobile();
+
+We don't need to know what actual automobile subtype is, we just know that we can invoke automobile behaviour on it.
+There are two benefits to manipulating objects solely in terms of the interface defined by abstract classes(or interfaces ins some languages like):
+1. Clients remain unaware of the specific types of objects they use, as long as the objects adhere to the interface that clients expect.
+2. Clients remain unaware of the classes that implement these objects. Clients only know about the abstract class(es) defining the interface.
+
+HAS-A over IS-A(inheritance vs composition)
+Inheritance causes IS-A relationship between supertype and subtype. Drawback of this relationship is:
+-parent's behaviour is rigidly locked into the child and behaviour can't be changed at runtime
+-it breaks encapsulation as parent class's inner details are exposed to child class
+-if parent class implementation changes, child class are also affected, sign of string coupling
+-if inherited implementation is not found appropriate to meet new requirements, we may need to modify parent class or replace it with another class,
+which limits flexibility and reusability.
+Once cure can be to inherit only from abstract classes as they have no or very little implementation.
+
+Composition(an object having reference to another object) causes HAS-A relationship and gives high level of flexibility as object being composed
+with can be replaced at run time as long as that object is implementing correct behaviour interface. ALos, there is no question of breaking encapsulation
+as objects interact via interfaces only. If an object's inner implementation changes, client object is not at all impacted as long as interface is intact.
+Design principle:
+Favour object composition over inheritance
+
+Composition is used by most of the design patterns.
+
+Strategy pattern:
+Define a family of algorithms/behaviours, encapsulate them and use them interchangeably. This lets algorithms vary independently from clients
+that use it.
+
+Design patterns enable us to structure our application in ways that are easier to understand, maintain, reuse and flexible.
+It also helps to restructure old code if it has degraded into a messy codebase.
+
+Design principle:
+Strive for loosely coupled designs between objects that interact.
+Loosely coupled designs allow us to build flexible object oriented systems that can handle the change because they minimize the interdependency
+between the objects.
+Oberver pattern:
+Observer pattern is a one-to-many relationship between an object(observable) and its dependent objects(observers) such that if object changes
+its dependent objects are notified about the change.
+This provides an object design in which objects are loosely coupled. They can interact with each other but know very little about each other,
+and hence one may change without affecting other.
+
+
+Design principle:
+Classes should be closed for modification, but open for extension.
+Our goal should be to allows classes to be easily extended to incorporate new behaviour without modifying existing code. This make our design resilient
+and flexible to take new functionality.
+We shouldn't try to apply this principle in every part of code as it may be unnecessary, wasteful and may lead to complex code.
+We should try to find those areas of design which are more likely to change, and extend them.
+Decorator pattern:
+Enables us to add additional behaviour to an object dynamically. It provides a much more flexible way of extending behaviour than subclassing.
+When we extend a class, subclass inherits features/responsibilities from it. As a result all the objects of subclass have those aspects. This is desired
+many times, but sometimes we want some features/responsibilities to be possessed by some individual objects only,rather than every single object of the
+class. We want to have control over what features a particular object should have and when. Subclassing doesn't give that flexibility.
+Decorator pattern helps in achieving this. Target object which we want to have a specific feature is wrapped inside another object having that feature.
+Enclosing object is called decorator, and importantly it has same interface as target object so that client code can invoke same interface. When client
+sends a request, decorator object forwards that request to target object and additionally add its own action(decoration) before or after it. Multiple
+decorators can be applied recursively, hence allowing to add as many features as we want.
+We define the interface of the target object/class. And we define an abstract Decorator class which implements this interface, so now it has
+same interface as target object and client can invoke calls on it transparently.This abstract class also contains the reference to target object.
+We implement concrete classes for Decorator,wherein we direct client requests to target object.And while it does so,it also performs the 'decoration'.
+/////
+Four constituents of design pattern:
 1. Name
 2. Problem
 3. Solution
@@ -15,7 +138,7 @@ Program to an interface, not an implementation.This greatly reduces implementati
 Creational patterns abstract the process of object creation.These patterns give you different ways to associate an interface with its implementation
 transparently at instantiation. Creational patterns ensure that your system is written in terms of interfaces, not implementations.
 
-Inheritance versus Composition: Composition allows behaviours ot be composed at run-time as compositions can be done with Interfaces.
+Inheritance versus Composition: Composition allows behaviours to be composed at run-time as compositions can be done with Interfaces.
 With inheritance subclass is bound to parent class's implementation.
 Favor object composition over class inheritance.
 

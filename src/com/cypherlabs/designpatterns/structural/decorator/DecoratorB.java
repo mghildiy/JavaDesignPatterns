@@ -1,14 +1,15 @@
 package com.cypherlabs.designpatterns.structural.decorator;
 
 public class DecoratorB extends Decorator {
+    Component component;
 
     public DecoratorB(Component component){
-        super(component);
+        this.component = component;
     }
 
     @Override
     public void coreFunctionality() {
-        super.coreFunctionality();
+        this.component.coreFunctionality();
         decorate();
     }
 
